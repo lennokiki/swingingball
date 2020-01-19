@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    li {
+      list-style: none;
+    }
+    .container {
+      width: 400px;
+      height: 400px;
+      border: 5px solid silver;
+      position: relative;
+      margin: 100px auto;
+      box-shadow: 2px 5px 8px  rgba(0,0,0, 0.5);
+      overflow: hidden;
+    }
+    .shake {
+      position: absolute;
+      right: 50%;
+      margin-right: -60px;
+      top: -30px;
+      display: flex;
+    }
+    .shake li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .shake li span {
+      display: block;
+    }
+    .line {
+      width: 4px;
+      height: 150px;
+    }
+    .ball {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    .firstBall {
+      transform-origin: 0 0;
+      animation: myfirst 2.5s ease-in-out infinite;
+      -moz-animation: myfirst 2.5s ease-in-out infinite;
+      -webkit-animation: myfirst 2.5s ease-in-out infinite;
+      -o-animation: myfirst 2.5s ease-in-out infinite;
+    }
+    .endBall {
+      transform-origin: 0 0;
+      animation: myEnd 2.5s ease-in-out infinite;
+      -moz-animation: myEnd 2.5s ease-in-out infinite;
+      -webkit-animation: myEnd 2.5s ease-in-out infinite;	
+      -o-animation: myEnd 2.5s ease-in-out infinite;		
+    }
+    .blue {
+      background: #59c6fe;
+    }
+    .red {
+      background: #fa7576;
+    }
+    .green {
+      background: #53c587;
+    }
+    .purple {
+      background: #d7b9f7;
+    }  
+    @keyframes myfirst {
+      0%{transform:rotate(45deg)}
+      25%{transform:rotate(0)}
+      75%{transform:rotate(0)}
+      100%{transform:rotate(45deg)}
+    }
+    @keyframes myEnd {
+      0%{transform:rotate(0)}
+      25%{transform:rotate(0)}
+      50%{transform:rotate(-45deg)}
+      75%{transform:rotate(0)}
+      100%{transform:rotate(0)}
+    }    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <ol class="shake">
+      <li class="firstBall">
+        <span class="line blue"></span>
+        <span class="ball blue"></span>
+      </li>
+      <li>
+        <span class="line green"></span>
+        <span class="ball green"></span>
+      </li>
+      <li>
+        <span class="line red"></span>
+        <span class="ball red"></span>
+      </li>
+      <li class="endBall" ref="endBall">
+        <span class="line purple"></span>
+        <span class="ball purple"></span>
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
